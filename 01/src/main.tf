@@ -4,7 +4,7 @@ terraform {
       source  = "kreuzwerker/docker"
     }
   }
-  required_version = "~>1.12.0" /*Многострочный комментарий.
+  required_version = ">=1.12.0" /*Многострочный комментарий.
  Требуемая версия terraform */
 }
 provider "docker" {}
@@ -19,7 +19,7 @@ resource "random_password" "random_string" {
   min_numeric = 1
 }
 
-/*
+
 resource "docker_image" {
   name         = "nginx:latest"
   keep_locally = true
@@ -34,4 +34,4 @@ resource "docker_container" "1nginx" {
     external = 9090
   }
 }
-*/
+
