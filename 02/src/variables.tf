@@ -31,8 +31,35 @@ variable "vpc_name" {
 
 ###ssh vars
 
-variable "vms_ssh_root_key" {
+/*variable "vms_ssh_root_key" {
   type        = string
   default     = "<your_ssh_ed25519_key>"
   description = "ssh-keygen -t ed25519"
+}
+*/
+variable "project_name" {
+  type        = string
+  default     = "netology"
+  description = "Название проекта"
+}
+
+variable "environment" {
+  type        = string
+  default     = "develop"
+  description = "Окружение"
+}
+
+variable "platform_name" {
+  type        = string
+  default     = "platform"
+  description = "Название платформы проекта"
+}
+
+variable "metadata" {
+  description = "Общие метаданные для всех виртуальных машин"
+
+  type = map(object({
+    serial-port-enable = number
+    ssh-keys           = string
+  }))
 }
