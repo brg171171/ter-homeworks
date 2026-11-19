@@ -1,0 +1,40 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/hashicorp/template" {
+  version     = "2.2.0"
+  constraints = "2.2.0"
+  hashes = [
+    "h1:94qn780bi1qjrbC3uQtjJh3Wkfwd5+tTtJHOb7KTg9w=",
+    "zh:01702196f0a0492ec07917db7aaa595843d8f171dc195f4c988d2ffca2a06386",
+    "zh:09aae3da826ba3d7df69efeb25d146a1de0d03e951d35019a0f80e4f58c89b53",
+    "zh:09ba83c0625b6fe0a954da6fbd0c355ac0b7f07f86c91a2a97849140fea49603",
+    "zh:0e3a6c8e16f17f19010accd0844187d524580d9fdb0731f675ffcf4afba03d16",
+    "zh:45f2c594b6f2f34ea663704cc72048b212fe7d16fb4cfd959365fa997228a776",
+    "zh:77ea3e5a0446784d77114b5e851c970a3dde1e08fa6de38210b8385d7605d451",
+    "zh:8a154388f3708e3df5a69122a23bdfaf760a523788a5081976b3d5616f7d30ae",
+    "zh:992843002f2db5a11e626b3fc23dc0c87ad3729b3b3cff08e32ffb3df97edbde",
+    "zh:ad906f4cebd3ec5e43d5cd6dc8f4c5c9cc3b33d2243c89c5fc18f97f7277b51d",
+    "zh:c979425ddb256511137ecd093e23283234da0154b7fa8b21c2687182d9aea8b2",
+  ]
+}
+
+provider "registry.terraform.io/yandex-cloud/yandex" {
+  version = "0.250.0"
+  hashes = [
+    "h1:VoCy6f2qDs1lEe6mXNthUGQBJl9ZDUzay8OVNlElQ7M=",
+    "zh:1b29128c389cda28c56acac3356f8faba562d291686f10bed3e897a30c6ac619",
+    "zh:23091a064a52ad0008868dbb8194801513a0ff67caf34f04a3c043d80160633d",
+    "zh:24f5d0390b91162f0f8ea5ba6deae23c459786bbc805f8feb36455d8af563f42",
+    "zh:5be83c5284040e3ba83c625a7597ce8e9425a3179cb45fddc51a8cee9ebf3b1e",
+    "zh:71e310b565b51087cb599437985ebabb883aa50815f4f654e4b93f5ce3311610",
+    "zh:8309ec835252c44c667f313771a9a6762a3213dd8c33950a252d6afdca7199eb",
+    "zh:86cc3b60a8b2ab5095990ca24dac93795192b70759365c7262b16c8c47ceace0",
+    "zh:8d5b4508292a285423249a19500904750933b21f046037b6f0186ea7b1e039ce",
+    "zh:9263e6dea123649278f5529a020675309cbcab4ac7648ea94f906c71dd4a5efd",
+    "zh:badb1e828b8ce399aaa8480c5173e1061341ccffa9eb8d7e61f7a40cd27a3fcb",
+    "zh:bd1bee8cfe4e885171773a6e5ae47c3b2817e06995663252bb67e00e289014b4",
+    "zh:d6f1a41005ce019bdc34d756271517edf304c5cac18cc7c819a9b62b6a4a035e",
+    "zh:e8fc5e73b33634571401fe98ce678cf1637f4c1071008469153c9be7820d928a",
+  ]
+}
