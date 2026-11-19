@@ -30,7 +30,7 @@ terraform-docs markdown table --output-file README.md --output-mode inject ./vpc
 
 ### Задание 3. Операции с Terraform state
 
-Подготовлен [список команд для резервного копирования, удаления записей и обратного импорта](state-import.md). Удаляются записи `module.vpc_dev`, `module.marketing_vm` и `module.analytics_vm`, а не сами ресурсы Yandex Cloud. Импорт выполняется в порядке: сеть, подсеть, `marketing-0`, `analytics-0`.
+Удаляются записи `module.vpc_dev`, `module.marketing_vm` и `module.analytics_vm`, а не сами ресурсы Yandex Cloud. Импорт выполняется в порядке: сеть, подсеть, `marketing-0`, `analytics-0`.
 
 Проверка после импорта: `terraform state list` и `terraform plan -input=false`. Ожидается отсутствие значимых изменений инфраструктуры. Фактический итоговый план после импорта не приложен, поэтому результат этого этапа пока не подтверждён.
 
