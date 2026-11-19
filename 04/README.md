@@ -1,6 +1,6 @@
-# ДЗ № 4. Продвинутые методы работы с Terraform
+## ДЗ № 4. Продвинутые методы работы с Terraform
 
-## Задание 1. Удалённый модуль и cloud-init
+### Задание 1. Удалённый модуль и cloud-init
 
 В [`src/main.tf`](src/main.tf) один удалённый модуль из демонстрации вызван дважды: `marketing_vm` и `analytics_vm`. Каждый вызов создаёт одну прерываемую ВМ в `ru-central1-a`. ВМ различаются именами и метками `project=marketing` и `project=analytics`; версия удалённого модуля закреплена по коммиту.
 
@@ -9,8 +9,11 @@
 `yc compute instance list` показал обе ВМ в статусе `RUNNING`. Вход по SSH на `marketing-0` подтверждён приглашением `ubuntu@marketing-0:~$`. Успешный `sudo nginx -t` и скриншоты из облака в отчёт пока не приложены.
 
 ![](./Снимок4_1_1.png)
+![](./Снимок4_1_2.png)
+![](./Снимок4_1_3.png)
+![](./Снимок4_1_4.png)
 
-## Задание 2. Локальный модуль VPC
+### Задание 2. Локальный модуль VPC
 
 Локальный модуль [`src/vpc`](src/vpc/) создаёт ровно одну сеть и одну подсеть. Он принимает `network_name`, `zone` и `v4_cidr_blocks`, а через `output "subnet"` возвращает `id`, `network_id`, имя, зону и CIDR. Оба модуля ВМ получают ID сети, ID подсети и зону из `module.vpc_dev.subnet`.
 
@@ -22,28 +25,15 @@
 terraform-docs markdown table --output-file README.md --output-mode inject ./vpc
 ```
 
-### Скриншот для задания 2
+![](./Снимок4_2_1.png)
 
-- [ ] Вывод `module.vpc_dev` в `terraform console` после применения переноса в реальном состоянии.
-
-## Задание 3. Операции с Terraform state
+### Задание 3. Операции с Terraform state
 
 Подготовлен [список команд для резервного копирования, удаления записей и обратного импорта](state-import.md). Удаляются записи `module.vpc_dev`, `module.marketing_vm` и `module.analytics_vm`, а не сами ресурсы Yandex Cloud. Импорт выполняется в порядке: сеть, подсеть, `marketing-0`, `analytics-0`.
 
-| Ресурс | Адрес для импорта |
-| --- | --- |
-| Сеть | `module.vpc_dev.yandex_vpc_network.this` |
-| Подсеть | `module.vpc_dev.yandex_vpc_subnet.this` |
-| `marketing-0` | `module.marketing_vm.yandex_compute_instance.vm[0]` |
-| `analytics-0` | `module.analytics_vm.yandex_compute_instance.vm[0]` |
-
 Проверка после импорта: `terraform state list` и `terraform plan -input=false`. Ожидается отсутствие значимых изменений инфраструктуры. Фактический итоговый план после импорта не приложен, поэтому результат этого этапа пока не подтверждён.
 
-### Скриншоты для задания 3
-
-- [ ] `terraform state list` до удаления.
-- [ ] Вывод `terraform state rm` и список состояния после удаления.
-- [ ] Сообщения `Import successful!` и восстановленный список состояния.
-- [ ] Итоговый `terraform plan -input=false`.
-
-Снимки для отчёта можно хранить в `04/screenshots/` и подключать относительными ссылками вида `![Описание](screenshots/имя-файла.png)`. Файлы состояния, приватные ключи и токены не должны попадать в репозиторий.
+![](./Снимок4_3_1.png)
+![](./Снимок4_3_2.png)
+![](./Снимок4_3_3.png)
+![](./Снимок4_3_4.png)
