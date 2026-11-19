@@ -1,7 +1,5 @@
 # ДЗ № 4. Продвинутые методы работы с Terraform
 
-Решение обязательных заданий 1–3. Корневая конфигурация находится в [`src/`](src/), условия заданий в [`hw-04.md`](hw-04.md).
-
 ## Задание 1. Удалённый модуль и cloud-init
 
 В [`src/main.tf`](src/main.tf) один удалённый модуль из демонстрации вызван дважды: `marketing_vm` и `analytics_vm`. Каждый вызов создаёт одну прерываемую ВМ в `ru-central1-a`. ВМ различаются именами и метками `project=marketing` и `project=analytics`; версия удалённого модуля закреплена по коммиту.
@@ -10,11 +8,7 @@
 
 `yc compute instance list` показал обе ВМ в статусе `RUNNING`. Вход по SSH на `marketing-0` подтверждён приглашением `ubuntu@marketing-0:~$`. Успешный `sudo nginx -t` и скриншоты из облака в отчёт пока не приложены.
 
-### Скриншоты для задания 1
-
-- [ ] SSH-сеанс с выводом `hostname`, `sudo cloud-init status --wait` и `sudo nginx -t`.
-- [ ] Карточки `marketing-0` и `analytics-0` в Compute Cloud, где видны метки `project`.
-- [ ] Вывод `module.marketing_vm` в `terraform console`.
+![](./Снимок4_1_1.png)
 
 ## Задание 2. Локальный модуль VPC
 
